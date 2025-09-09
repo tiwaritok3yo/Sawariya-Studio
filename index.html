@@ -1,562 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SAWARIYA STUDIO — DESIGN. DEVELOP. CONNECT.</title>
-  <meta name="description" content="SAWARIYA STUDIO — websites, branding, social media & marketing.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/5yxW7dCC/favicon-32x32.png">
-  <style>
-    :root{
-      --blue-deep: #227DB6;
-      --blue-light: #80E5F7;
-      --yellow: #FFE100;
-      --glass-bg: rgba(255,255,255,0.06);
-      --text-dark: #0b1220;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAWARIYA STUDIO — Websites, Branding & Digital Marketing Agency</title>
+  <meta name="description" content="SAWARIYA STUDIO is a creative digital agency specializing in website design, development, and digital marketing. We craft custom websites, compelling branding, and social media strategies to help your business grow.">
+  <meta name="keywords" content="web design, website development, branding, digital marketing, social media management, SEO, online presence, creative agency, Sawariya Studio">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/5yxW7dCC/favicon-32x32.png">
+  <style>
+    :root{
+      --blue-deep: #227DB6;
+      --blue-light: #80E5F7;
+      --yellow: #FFE100;
+      --glass-bg: rgba(255,255,255,0.06);
+      --text-dark: #0b1220;
+    }
 
-    html,body { height:100%; }
-    body{
-      font-family: 'Inter', sans-serif;
-      margin:0;
-      color: #0b1220;
-      background: #f7fbff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      scroll-behavior: smooth;
-    }
+    html,body { height:100%; }
+    body{
+      font-family: 'Inter', sans-serif;
+      margin:0;
+      color: #0b1220;
+      background: #f7fbff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      scroll-behavior: smooth;
+    }
 
-    /* --- PRELOADER --- */
-    .preloader {
-      position: fixed; inset:0;
-      z-index: 9999;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(180deg, var(--blue-deep), #0f2b45 85%);
-      color: white;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .preloader .logo {
-      font-weight:900;
-      font-size: clamp(20px, 5vw, 44px);
-      letter-spacing: 0.08em;
-      background: linear-gradient(90deg, var(--blue-light), var(--yellow));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: shimmer 2.2s linear infinite;
-    }
-    .preloader .bar {
-      width: 220px;
-      height: 8px;
-      background: rgba(255,255,255,0.12);
-      border-radius: 999px;
-      overflow:hidden;
-    }
-    .preloader .bar > i {
-      display:block;
-      height:100%;
-      width:0%;
-      background: linear-gradient(90deg, var(--blue-light), var(--yellow));
-      border-radius: 999px;
-      animation: loadbar 1.6s ease forwards;
-    }
-    @keyframes loadbar {
-      0% { width: 0%; }
-      100% { width: 100%; }
-    }
-    @keyframes shimmer {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-    .preloader.fade-out { opacity:0; pointer-events:none; transition:opacity .6s ease; }
+    /* --- PRELOADER --- */
+    .preloader {
+      position: fixed; inset:0;
+      z-index: 9999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg, var(--blue-deep), #0f2b45 85%);
+      color: white;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .preloader .logo {
+      font-weight:900;
+      font-size: clamp(20px, 5vw, 44px);
+      letter-spacing: 0.08em;
+      background: linear-gradient(90deg, var(--blue-light), var(--yellow));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 2.2s linear infinite;
+    }
+    .preloader .bar {
+      width: 220px;
+      height: 8px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 999px;
+      overflow:hidden;
+    }
+    .preloader .bar > i {
+      display:block;
+      height:100%;
+      width:0%;
+      background: linear-gradient(90deg, var(--blue-light), var(--yellow));
+      border-radius: 999px;
+      animation: loadbar 1.6s ease forwards;
+    }
+    @keyframes loadbar {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    .preloader.fade-out { opacity:0; pointer-events:none; transition:opacity .6s ease; }
 
-    /* --- GLOBAL COMPONENTS --- */
-    .glass {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-    }
-    .card-hover {
-      transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
-    }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(15,34,60,0.18);
-    }
+    /* --- GLOBAL COMPONENTS --- */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+    }
+    .card-hover {
+      transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(15,34,60,0.18);
+    }
 
-    /* --- HEADER --- */
-    header.site-header {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 32px);
-      max-width: 1200px;
-      z-index: 60;
-      padding: 10px;
-    }
-    .nav-wrap {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 20px;
-    }
+    /* --- HEADER --- */
+    header.site-header {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 1200px;
+      z-index: 60;
+      padding: 10px;
+    }
+    .nav-wrap {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 20px;
+    }
 
-    /* mobile menu */
-    .mobile-menu {
-      position: fixed;
-      right: -100%;
-      top: 0;
-      width: 280px;
-      height: 100vh;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      backdrop-filter: blur(8px);
-      box-shadow: -8px 0 30px rgba(0,0,0,0.35);
-      transition: right .34s ease;
-      z-index: 70;
-      padding: 28px;
-    }
-    .mobile-menu.open { right: 0; }
+    /* mobile menu */
+    .mobile-menu {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      width: 280px;
+      height: 100vh;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      backdrop-filter: blur(8px);
+      box-shadow: -8px 0 30px rgba(0,0,0,0.35);
+      transition: right .34s ease;
+      z-index: 70;
+      padding: 28px;
+    }
+    .mobile-menu.open { right: 0; }
 
-    /* Hero gradient (blue -> yellow) */
-    .hero {
-      min-height: 84vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding: 48px 20px;
-      background: linear-gradient(120deg, var(--blue-deep) 0%, var(--blue-light) 35%, var(--yellow) 100%);
-      color: white;
-    }
+    /* Hero gradient (blue -> yellow) */
+    .hero {
+      min-height: 84vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 48px 20px;
+      background: linear-gradient(120deg, var(--blue-deep) 0%, var(--blue-light) 35%, var(--yellow) 100%);
+      color: white;
+    }
 
-    /* content sections spacing */
-    section { padding: 72px 20px; }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
+    /* content sections spacing */
+    section { padding: 72px 20px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
 
-    /* hero title style */
-    .hero h1 {
-      font-weight: 900;
-      font-size: clamp(28px, 6vw, 64px);
-      line-height:1.02;
-      margin-bottom: 18px;
-      text-shadow: 0 6px 30px rgba(16,30,60,0.25);
-    }
-    .hero p { max-width:900px; margin: 0 auto 26px; color: rgba(255,255,255,0.95); font-size: clamp(15px, 1.6vw, 18px); }
+    /* hero title style */
+    .hero h2 {
+      font-weight: 900;
+      font-size: clamp(28px, 6vw, 64px);
+      line-height:1.02;
+      margin-bottom: 18px;
+      text-shadow: 0 6px 30px rgba(16,30,60,0.25);
+    }
+    .hero p { max-width:900px; margin: 0 auto 26px; color: rgba(255,255,255,0.95); font-size: clamp(15px, 1.6vw, 18px); }
 
-    /* CTA */
-    .cta-primary {
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 12px 20px; border-radius: 12px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.06));
-      color: var(--text-dark);
-      font-weight:700;
-      box-shadow: 0 8px 28px rgba(2,6,23,0.18);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
+    /* CTA */
+    .cta-primary {
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 12px 20px; border-radius: 12px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.06));
+      color: var(--text-dark);
+      font-weight:700;
+      box-shadow: 0 8px 28px rgba(2,6,23,0.18);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
 
-    /* packages grid */
-    .packs-grid { display:grid; gap:20px; grid-template-columns: repeat(1,1fr); }
-    @media(min-width:768px){ .packs-grid { grid-template-columns: repeat(3,1fr); } }
+    /* packages grid */
+    .packs-grid { display:grid; gap:20px; grid-template-columns: repeat(1,1fr); }
+    @media(min-width:768px){ .packs-grid { grid-template-columns: repeat(3,1fr); } }
 
-    /* Services grid */
-    .services-grid { display:grid; gap:18px; grid-template-columns: repeat(1,1fr); }
-    @media(min-width:900px){ .services-grid { grid-template-columns: repeat(3,1fr); } }
+    /* Services grid */
+    .services-grid { display:grid; gap:18px; grid-template-columns: repeat(1,1fr); }
+    @media(min-width:900px){ .services-grid { grid-template-columns: repeat(3,1fr); } }
 
-    /* portfolio layout */
-    .portfolio-grid { display:grid; grid-template-columns: repeat(1,1fr); gap:18px; }
-    @media(min-width:700px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+    /* portfolio layout */
+    .portfolio-grid { display:grid; grid-template-columns: repeat(1,1fr); gap:18px; }
+    @media(min-width:700px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
 
-    /* testimonial */
-    .testimonial {
-      display:flex; flex-direction:column; gap:10px; align-items:center;
-    }
-    .test-slider { display:flex; gap:18px; overflow:hidden; width:100%; align-items:center; justify-content:center; }
-    .test-card { min-width: 320px; max-width: 520px; }
+    /* testimonial */
+    .testimonial {
+      display:flex; flex-direction:column; gap:10px; align-items:center;
+    }
+    .test-slider { display:flex; gap:18px; overflow:hidden; width:100%; align-items:center; justify-content:center; }
+    .test-card { min-width: 320px; max-width: 520px; }
 
-    /* faq */
-    .faq-item { border-radius:12px; padding: 16px; background: rgba(255,255,255,0.03); }
-    details.summary { cursor:pointer; }
+    /* faq */
+    .faq-item { border-radius:12px; padding: 16px; background: rgba(255,255,255,0.03); }
+    details.summary { cursor:pointer; }
 
-    footer.site-foot { padding: 28px 20px; border-top: 1px solid rgba(0,0,0,0.06); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+    footer.site-foot { padding: 28px 20px; border-top: 1px solid rgba(0,0,0,0.06); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
 
-    /* --- Logo Zoom Modal --- */
-    #logoModal {
-      display: none;
-      position: fixed; inset:0;
-      background: rgba(0,0,0,0.8);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-    }
-    #logoModal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    }
-    #logoModal button {
-      position: absolute;
-      top: 20px; right: 20px;
-      font-size: 28px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+    /* --- Logo Zoom Modal --- */
+    #logoModal {
+      display: none;
+      position: fixed; inset:0;
+      background: rgba(0,0,0,0.8);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    #logoModal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    }
+    #logoModal button {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <h1 class="sr-only">SAWARIYA STUDIO - Website Design, Branding & Digital Marketing Agency</h1>
 
-  <div id="preloader" class="preloader" role="status" aria-label="Loading">
-    <div class="logo">SAWARIYA STUDIO</div>
-    <div class="bar" aria-hidden="true"><i></i></div>
-  </div>
+  <div id="preloader" class="preloader" role="status" aria-label="Loading">
+    <div class="logo">SAWARIYA STUDIO</div>
+    <div class="bar" aria-hidden="true"><i></i></div>
+  </div>
 
-  <header class="site-header">
-    <div class="nav-wrap glass p-3 px-4">
-      <div class="flex items-center gap-3">
-        <!-- added class="zoom-logo" and cursor style -->
-        <img src="https://i.postimg.cc/KYKSVBBt/Gemini-Generated-Image-w1trhcw1trhcw1tr.png"
-             alt="SAWARIYA STUDIO logo"
-             class="w-12 h-12 rounded-lg object-cover zoom-logo" style="cursor: pointer;" />
-        <div>
-          <div class="text-white font-black">SAWARIYA STUDIO</div>
-          <div class="text-xs text-white/80 -mt-1">DESIGN. DEVELOP. CONNECT.</div>
-        </div>
-      </div>
+  <header class="site-header">
+    <div class="nav-wrap glass p-3 px-4">
+      <div class="flex items-center gap-3">
+        <img src="https://i.postimg.cc/KYKSVBBt/Gemini-Generated-Image-w1trhcw1trhcw1tr.png"
+             alt="SAWARIYA STUDIO official logo"
+             class="w-12 h-12 rounded-lg object-cover zoom-logo" style="cursor: pointer;" />
+        <div>
+          <div class="text-white font-black">SAWARIYA STUDIO</div>
+          <div class="text-xs text-white/80 -mt-1">DESIGN. DEVELOP. CONNECT.</div>
+        </div>
+      </div>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-white/95">
-        <a href="#packages" class="hover:underline">Packages</a>
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#portfolio" class="hover:underline">Portfolio</a>
-        <a href="#testimonials" class="hover:underline">Testimonials</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </nav>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-white/95">
+        <a href="#packages" class="hover:underline">Packages</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#portfolio" class="hover:underline">Portfolio</a>
+        <a href="#testimonials" class="hover:underline">Testimonials</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden md:inline-flex cta-primary" aria-label="Work with us">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" />
-          </svg>
-          Work with us
-        </a>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden md:inline-flex cta-primary" aria-label="Work with us for website and branding">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" />
+          </svg>
+          Work with us
+        </a>
 
-        <button id="hambtn" aria-label="Open menu" class="md:hidden p-2 rounded bg-white/6">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
+        <button id="hambtn" aria-label="Open menu" class="md:hidden p-2 rounded bg-white/6">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <aside id="mobileMenu" class="mobile-menu">
-  <div class="flex items-center justify-between mb-6">
-    <div class="flex items-center gap-3">
-      <!-- added class="zoom-logo" and cursor style -->
-      <img src="https://i.postimg.cc/KYKSVBBt/Gemini-Generated-Image-w1trhcw1trhcw1tr.png"
-           alt="Sawariya Studio logo"
-           class="w-10 h-10 rounded zoom-logo" style="cursor: pointer;" />
-      <div class="text-white font-bold">SAWARIYA STUDIO</div>
-    </div>
-    <button id="closeMobile" aria-label="Close menu" class="p-2 rounded bg-white/6">
-      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-  </div>
-    
-    <nav class="flex flex-col gap-4 text-white/90">
-      <a href="#packages" class="py-2 px-2 rounded hover:bg-white/6">Packages</a>
-      <a href="#services" class="py-2 px-2 rounded hover:bg-white/6">Services</a>
-      <a href="#portfolio" class="py-2 px-2 rounded hover:bg-white/6">Portfolio</a>
-      <a href="#testimonials" class="py-2 px-2 rounded hover:bg-white/6">Testimonials</a>
-      <a href="#contact" class="py-2 px-2 rounded hover:bg-white/6">Contact</a>
-    </nav>
-  </aside>
+  <aside id="mobileMenu" class="mobile-menu">
+  <div class="flex items-center justify-between mb-6">
+    <div class="flex items-center gap-3">
+      <img src="https://i.postimg.cc/KYKSVBBt/Gemini-Generated-Image-w1trhcw1trhcw1tr.png"
+           alt="Sawariya Studio logo"
+           class="w-10 h-10 rounded zoom-logo" style="cursor: pointer;" />
+      <div class="text-white font-bold">SAWARIYA STUDIO</div>
+    </div>
+    <button id="closeMobile" aria-label="Close menu" class="p-2 rounded bg-white/6">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+    
+    <nav class="flex flex-col gap-4 text-white/90">
+      <a href="#packages" class="py-2 px-2 rounded hover:bg-white/6">Packages</a>
+      <a href="#services" class="py-2 px-2 rounded hover:bg-white/6">Services</a>
+      <a href="#portfolio" class="py-2 px-2 rounded hover:bg-white/6">Portfolio</a>
+      <a href="#testimonials" class="py-2 px-2 rounded hover:bg-white/6">Testimonials</a>
+      <a href="#contact" class="py-2 px-2 rounded hover:bg-white/6">Contact</a>
+    </nav>
+  </aside>
 
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="section-inner">
-      <h1>DESIGN. DEVELOP. CONNECT.</h1>
-      <p>
-        Sawariya Studio is a creative digital agency where we design and develop websites that not only look great but actually deliver results. Alongside that, we help brands grow their digital presence with smart social media management and marketing that connects with the right audience.
-      </p>
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="section-inner">
+      <h2>DESIGN. DEVELOP. CONNECT.</h2>
+      <p>
+        Sawariya Studio is a creative digital agency where we design and develop websites that not only look great but actually deliver results. Alongside that, we help brands grow their digital presence with smart social media management and marketing that connects with the right audience.
+      </p>
 
-      <div class="mt-6 flex items-center justify-center gap-4">
-        <a href="#packages" class="rounded-lg px-5 py-3 font-semibold" style="background: white; color: var(--blue-deep);">See Packages</a>
-        <a href="#contact" class="rounded-lg px-5 py-3" style="background: rgba(255,255,255,0.14); color: white;">Get a Quote</a>
-      </div>
-    </div>
-  </section>
+      <div class="mt-6 flex items-center justify-center gap-4">
+        <a href="#packages" class="rounded-lg px-5 py-3 font-semibold" style="background: white; color: var(--blue-deep);">See Packages</a>
+        <a href="#contact" class="rounded-lg px-5 py-3" style="background: rgba(255,255,255,0.14); color: white;">Get a Quote</a>
+      </div>
+    </div>
+  </section>
 
-  <section style="background: linear-gradient(180deg, var(--yellow), #ffd84d);" aria-label="About Sawaliya">
-    <div class="section-inner max-w-4xl mx-auto text-center">
-      <div class="glass p-6">
-        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--text-dark)">Who we are</h2>
-        <p class="mt-3 text-sm md:text-base" style="color:rgba(10,18,28,0.92)">
-          Sawariya Studio crafts memorable digital experiences — websites, brand systems, social management and paid marketing that move the needle. We combine research-driven UX with clean visuals to get your brand noticed and converting.
-        </p>
-      </div>
-    </div>
-  </section>
+  <section style="background: linear-gradient(180deg, var(--yellow), #ffd84d);" aria-label="About Sawariya">
+    <div class="section-inner max-w-4xl mx-auto text-center">
+      <div class="glass p-6">
+        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--text-dark)">Who we are</h2>
+        <p class="mt-3 text-sm md:text-base" style="color:rgba(10,18,28,0.92)">
+          Sawariya Studio crafts memorable digital experiences — websites, brand systems, social management and paid marketing that move the needle. We combine research-driven UX with clean visuals to get your brand noticed and converting.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <section id="packages" style="background: linear-gradient(180deg, rgba(128,229,247,0.12), rgba(128,229,247,0.06));">
-    <div class="section-inner">
-      <h2 class="text-3xl font-bold text-center mb-8" style="color:var(--text-dark)">📦 Sawariya Studios – Bundled Packages</h2>
+  <section id="packages" style="background: linear-gradient(180deg, rgba(128,229,247,0.12), rgba(128,229,247,0.06));">
+    <div class="section-inner">
+      <h2 class="text-3xl font-bold text-center mb-8" style="color:var(--text-dark)">📦 Sawariya Studios – Bundled Packages</h2>
 
-      <div class="packs-grid">
-        <article class="glass p-6 card-hover card-hover">
-          <h3 class="text-xl font-bold mb-1">Starter Presence</h3>
-          <div class="text-sm text-yellow-600 font-semibold mb-3">₹45,000 / $540</div>
-          <ul class="text-sm text-gray-800 space-y-1">
-            <li>• 1 Website (up to 5 pages)</li>
-            <li>• UI/UX design included</li>
-            <li>• 3 months content updates</li>
-            <li>• 1 month social media management (8 posts)</li>
-            <li>• Portfolio design</li>
-          </ul>
-          <div class="mt-4 flex items-center gap-3">
-            <a href="#contact" class="px-4 py-2 rounded bg-var" style="background:var(--blue-deep); color:white; font-weight:700;">Get Quote</a>
-            <a href="#services" class="text-sm text-gray-700 hover:underline">See standalone services</a>
-          </div>
-        </article>
+      <div class="packs-grid">
+        <article class="glass p-6 card-hover card-hover">
+          <h3>Starter Presence</h3>
+          <div class="text-sm text-yellow-600 font-semibold mb-3">₹45,000 / $540</div>
+          <ul class="text-sm text-gray-800 space-y-1">
+            <li>• 1 Website (up to 5 pages)</li>
+            <li>• UI/UX design included</li>
+            <li>• 3 months content updates</li>
+            <li>• 1 month social media management (8 posts)</li>
+            <li>• Portfolio design</li>
+          </ul>
+          <div class="mt-4 flex items-center gap-3">
+            <a href="#contact" class="px-4 py-2 rounded bg-var" style="background:var(--blue-deep); color:white; font-weight:700;">Get Quote</a>
+            <a href="#services" class="text-sm text-gray-700 hover:underline">See standalone services</a>
+          </div>
+        </article>
 
-        <article class="glass p-6 card-hover">
-          <h3 class="text-xl font-bold mb-1">Growth Package</h3>
-          <div class="text-sm text-yellow-600 font-semibold mb-1">₹95,000 / $1,140 <span class="text-xs text-gray-700"> (1st year)</span></div>
-          <div class="text-xs text-gray-700 mb-3">Renewal: ₹25,000 / $300</div>
-          <ul class="text-sm text-gray-800 space-y-1">
-            <li>• 1 Website (up to 10 pages, SEO-friendly)</li>
-            <li>• 1 year content updates (4 cycles)</li>
-            <li>• Social media management (2 platforms, 10 posts/month, 6 months)</li>
-            <li>• Social media marketing (strategy + ₹10k ad credit)</li>
-            <li>• Basic UX research & UI changes</li>
-          </ul>
-          <div class="mt-4">
-            <a href="#contact" class="px-4 py-2 rounded" style="background:var(--blue-deep); color:white; font-weight:700;">Book a call</a>
-          </div>
-        </article>
+        <article class="glass p-6 card-hover">
+          <h3>Growth Package</h3>
+          <div class="text-sm text-yellow-600 font-semibold mb-1">₹95,000 / $1,140 <span class="text-xs text-gray-700"> (1st year)</span></div>
+          <div class="text-xs text-gray-700 mb-3">Renewal: ₹25,000 / $300</div>
+          <ul class="text-sm text-gray-800 space-y-1">
+            <li>• 1 Website (up to 10 pages, SEO-friendly)</li>
+            <li>• 1 year content updates (4 cycles)</li>
+            <li>• Social media management (2 platforms, 10 posts/month, 6 months)</li>
+            <li>• Social media marketing (strategy + ₹10k ad credit)</li>
+            <li>• Basic UX research & UI changes</li>
+          </ul>
+          <div class="mt-4">
+            <a href="#contact" class="px-4 py-2 rounded" style="background:var(--blue-deep); color:white; font-weight:700;">Book a call</a>
+          </div>
+        </article>
 
-        <article class="glass p-6 card-hover">
-          <h3 class="text-xl font-bold mb-1">Digital Dominance</h3>
-          <div class="text-sm text-yellow-600 font-semibold mb-1">₹2,50,000 / $3,000 <span class="text-xs text-gray-700"> (1st year)</span></div>
-          <div class="text-xs text-gray-700 mb-3">Renewal: ₹1,00,000 / $1,200</div>
-          <ul class="text-sm text-gray-800 space-y-1">
-            <li>• 1 Custom Website (up to 20 pages, blog/e-commerce)</li>
-            <li>• 2 years unlimited content updates</li>
-            <li>• Social media management (3 platforms, 15 posts/month, 12 months)</li>
-            <li>• Social media marketing (strategy + ₹25k ad credit)</li>
-            <li>• Full UX research + brand guidelines</li>
-          </ul>
-          <div class="mt-4">
-            <a href="#contact" class="px-4 py-2 rounded" style="background:var(--blue-deep); color:white; font-weight:700;">Start project</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+        <article class="glass p-6 card-hover">
+          <h3>Digital Dominance</h3>
+          <div class="text-sm text-yellow-600 font-semibold mb-1">₹2,50,000 / $3,000 <span class="text-xs text-gray-700"> (1st year)</span></div>
+          <div class="text-xs text-gray-700 mb-3">Renewal: ₹1,00,000 / $1,200</div>
+          <ul class="text-sm text-gray-800 space-y-1">
+            <li>• 1 Custom Website (up to 20 pages, blog/e-commerce)</li>
+            <li>• 2 years unlimited content updates</li>
+            <li>• Social media management (3 platforms, 15 posts/month, 12 months)</li>
+            <li>• Social media marketing (strategy + ₹25k ad credit)</li>
+            <li>• Full UX research + brand guidelines</li>
+          </ul>
+          <div class="mt-4">
+            <a href="#contact" class="px-4 py-2 rounded" style="background:var(--blue-deep); color:white; font-weight:700;">Start project</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <section id="services">
-    <div class="section-inner">
-      <h2 class="text-3xl font-bold text-center mb-8">🎯 Standalone Services</h2>
-      <div class="services-grid">
-        <div class="glass p-5 card-hover">
-          <h4 class="font-bold">Website Design & Development</h4>
-          <p class="text-sm text-gray-700 mt-2">Basic: ₹30,000 | Standard: ₹45k–55k | Advanced: ₹60k–70k</p>
-        </div>
-        <div class="glass p-5 card-hover">
-          <h4 class="font-bold">UX Research & Brand Strategy</h4>
-          <p class="text-sm text-gray-700 mt-2">From ₹20,000 (project-based)</p>
-        </div>
-        <div class="glass p-5 card-hover">
-          <h4 class="font-bold">Social Media Management</h4>
-          <p class="text-sm text-gray-700 mt-2">₹15,000 – ₹30,000 / month (10–15 posts + engagement)</p>
-        </div>
-        <div class="glass p-5 card-hover">
-          <h4 class="font-bold">Social Media Marketing (Ads)</h4>
-          <p class="text-sm text-gray-700 mt-2">From ₹20,000 / campaign (ad spend extra)</p>
-        </div>
-        <div class="glass p-5 card-hover">
-          <h4 class="font-bold">Logo & Brand Identity</h4>
-          <p class="text-sm text-gray-700 mt-2">₹8,000 – ₹20,000 (one-time)</p>
-        </div>
-        <div class="glass p-5 card-hover">
-          <h4 class="font-bold">Portfolio / Personal Website</h4>
-          <p class="text-sm text-gray-700 mt-2">₹25,000 – ₹40,000 (one-time)</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section id="services">
+    <div class="section-inner">
+      <h2 class="text-3xl font-bold text-center mb-8">🎯 Standalone Services</h2>
+      <div class="services-grid">
+        <div class="glass p-5 card-hover">
+          <h3>Website Design & Development</h3>
+          <p class="text-sm text-gray-700 mt-2">Basic: ₹30,000 | Standard: ₹45k–55k | Advanced: ₹60k–70k</p>
+        </div>
+        <div class="glass p-5 card-hover">
+          <h3>UX Research & Brand Strategy</h3>
+          <p class="text-sm text-gray-700 mt-2">From ₹20,000 (project-based)</p>
+        </div>
+        <div class="glass p-5 card-hover">
+          <h3>Social Media Management</h3>
+          <p class="text-sm text-gray-700 mt-2">₹15,000 – ₹30,000 / month (10–15 posts + engagement)</p>
+        </div>
+        <div class="glass p-5 card-hover">
+          <h3>Social Media Marketing (Ads)</h3>
+          <p class="text-sm text-gray-700 mt-2">From ₹20,000 / campaign (ad spend extra)</p>
+        </div>
+        <div class="glass p-5 card-hover">
+          <h3>Logo & Brand Identity</h3>
+          <p class="text-sm text-gray-700 mt-2">₹8,000 – ₹20,000 (one-time)</p>
+        </div>
+        <div class="glass p-5 card-hover">
+          <h3>Portfolio / Personal Website</div>
+          <p class="text-sm text-gray-700 mt-2">₹25,000 – ₹40,000 (one-time)</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="portfolio" style="background: linear-gradient(180deg, rgba(34,125,182,0.06), rgba(34,125,182,0.02));">
-    <div class="section-inner">
-      <h2 class="text-3xl font-bold text-center mb-6">🖼 Portfolio (coming soon)</h2>
-      <p class="text-center text-gray-700 mb-8 max-w-2xl mx-auto">We're building our case studies. Meanwhile here are some placeholder shots to show layout.</p>
+  <section id="portfolio" style="background: linear-gradient(180deg, rgba(34,125,182,0.06), rgba(34,125,182,0.02));">
+    <div class="section-inner">
+      <h2 class="text-3xl font-bold text-center mb-6">🖼 Portfolio & Case Studies</h2>
+      <p class="text-center text-gray-700 mb-8 max-w-2xl mx-auto">We're building our case studies. Meanwhile here are some placeholder shots to show layout.</p>
 
-      <div class="portfolio-grid">
-        <div class="glass p-4 card-hover text-center">Project Placeholder 1</div>
-        <div class="glass p-4 card-hover text-center">Project Placeholder 2</div>
-        <div class="glass p-4 card-hover text-center">Project Placeholder 3</div>
-      </div>
-    </div>
-  </section>
+      <div class="portfolio-grid">
+        <div class="glass p-4 card-hover text-center">Project Placeholder 1</div>
+        <div class="glass p-4 card-hover text-center">Project Placeholder 2</div>
+        <div class="glass p-4 card-hover text-center">Project Placeholder 3</div>
+      </div>
+    </div>
+  </section>
 
-  <section id="testimonials">
-    <div class="section-inner text-center">
-      <h2 class="text-3xl font-bold mb-6">💬 Testimonials</h2>
+  <section id="testimonials">
+    <div class="section-inner text-center">
+      <h2 class="text-3xl font-bold mb-6">💬 Testimonials</h2>
 
-      <div class="test-slider" id="testSlider" aria-live="polite">
-        <div class="test-card glass p-6 testimonial">
-          <p class="text-gray-800">"SAWARIYA STUDIO transformed our website — traffic doubled and signups shot up." — <strong>R. Sharma</strong></p>
-        </div>
-        <div class="test-card glass p-6 testimonial">
-          <p class="text-gray-800">"The team nailed our brand identity and socials — reliable & creative." — <strong>Meera K.</strong></p>
-        </div>
-        <div class="test-card glass p-6 testimonial">
-          <p class="text-gray-800">"Fast turnarounds, thoughtful UX & clean visuals. Highly recommended." — <strong>K. Gupta</strong></p>
-        </div>
-      </div>
+      <div class="test-slider" id="testSlider" aria-live="polite">
+        <div class="test-card glass p-6 testimonial">
+          <p class="text-gray-800">"SAWARIYA STUDIO transformed our website — traffic doubled and signups shot up." — <strong>R. Sharma</strong></p>
+        </div>
+        <div class="test-card glass p-6 testimonial">
+          <p class="text-gray-800">"The team nailed our brand identity and socials — reliable & creative." — <strong>Meera K.</strong></p>
+        </div>
+        <div class="test-card glass p-6 testimonial">
+          <p class="text-gray-800">"Fast turnarounds, thoughtful UX & clean visuals. Highly recommended." — <strong>K. Gupta</strong></p>
+        </div>
+      </div>
 
-      <div class="mt-4 flex items-center justify-center gap-3">
-        <button id="prevTest" class="px-3 py-2 bg-white/8 rounded">Prev</button>
-        <button id="nextTest" class="px-3 py-2 bg-white/8 rounded">Next</button>
-      </div>
-    </div>
-  </section>
+      <div class="mt-4 flex items-center justify-center gap-3">
+        <button id="prevTest" class="px-3 py-2 bg-white/8 rounded" aria-label="Previous testimonial">Prev</button>
+        <button id="nextTest" class="px-3 py-2 bg-white/8 rounded" aria-label="Next testimonial">Next</button>
+      </div>
+    </div>
+  </section>
 
-  <section id="faq" style="background: linear-gradient(180deg, rgba(255,225,0,0.03), rgba(255,225,0,0.01));">
-    <div class="section-inner max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-6">❓ FAQ</h2>
+  <section id="faq" style="background: linear-gradient(180deg, rgba(255,225,0,0.03), rgba(255,225,0,0.01));">
+    <div class="section-inner max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">❓ FAQ</h2>
 
-      <div class="space-y-3">
-        <details class="faq-item">
-          <summary class="font-semibold">How long does a basic site take?</summary>
-          <div class="mt-2 text-sm text-gray-700">Usually 2–4 weeks depending on scope, content and reviews.</div>
-        </details>
+      <div class="space-y-3">
+        <details class="faq-item">
+          <summary class="font-semibold">How long does a basic site take?</summary>
+          <div class="mt-2 text-sm text-gray-700">Usually 2–4 weeks depending on scope, content and reviews.</div>
+        </details>
 
-        <details class="faq-item">
-          <summary class="font-semibold">What does renewal mean?</summary>
-          <div class="mt-2 text-sm text-gray-700">Renewal covers hosting, support & periodic UI updates as listed per package.</div>
-        </details>
+        <details class="faq-item">
+          <summary class="font-semibold">What does renewal mean?</summary>
+          <div class="mt-2 text-sm text-gray-700">Renewal covers hosting, support & periodic UI updates as listed per package.</div>
+        </details>
 
-        <details class="faq-item">
-          <summary class="font-semibold">Can you run our ad campaigns?</summary>
-          <div class="mt-2 text-sm text-gray-700">Yes — we plan strategy, set up campaigns & offer ad-credit suggestions (ad-spend not included).</div>
-        </details>
-      </div>
-    </div>
-  </section>
+        <details class="faq-item">
+          <summary class="font-semibold">Can you run our ad campaigns?</summary>
+          <div class="mt-2 text-sm text-gray-700">Yes — we plan strategy, set up campaigns & offer ad-credit suggestions (ad-spend not included).</div>
+        </details>
+      </div>
+    </div>
+  </section>
 
-  <section id="contact">
-    <div class="section-inner max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-3">📞 Get in touch</h2>
-      <p class="text-gray-700 mb-6">Tell us about your project or request a quote — we’ll reply within 24 hours.</p>
+  <section id="contact">
+    <div class="section-inner max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-3">📞 Get in touch</h2>
+      <p class="text-gray-700 mb-6">Tell us about your project or request a quote — we’ll reply within 24 hours.</p>
 
-      <div class="glass p-6">
-       <form id="contactForm" action="mailto:contact@sawariyastudio.site" method="get" class="flex flex-col gap-3">
-          <input name="name" required placeholder="Your name" class="p-3 rounded border border-transparent" />
-          <input name="email" type="email" required placeholder="Email address" class="p-3 rounded border border-transparent" />
-          <textarea name="message" rows="4" placeholder="Project details / budget" class="p-3 rounded border border-transparent"></textarea>
-          <div class="flex items-center justify-center gap-3 mt-2">
-            <button type="submit" class="px-5 py-2 rounded" style="background:var(--blue-deep); color:white; font-weight:700;">Send Email</button>
-            <a href="https://wa.me/919540026244" target="_blank" rel="noopener" class="px-5 py-2 rounded" style="background:var(--yellow); font-weight:700;">WhatsApp</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+      <div class="glass p-6">
+       <form id="contactForm" action="mailto:contact@sawariyastudio.site" method="get" class="flex flex-col gap-3">
+          <input name="name" required placeholder="Your name" class="p-3 rounded border border-transparent" />
+          <input name="email" type="email" required placeholder="Email address" class="p-3 rounded border border-transparent" />
+          <textarea name="message" rows="4" placeholder="Project details / budget" class="p-3 rounded border border-transparent"></textarea>
+          <div class="flex items-center justify-center gap-3 mt-2">
+            <button type="submit" class="px-5 py-2 rounded" style="background:var(--blue-deep); color:white; font-weight:700;">Send Email</button>
+            <a href="https://wa.me/919540026244" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded" style="background:var(--yellow); font-weight:700;">WhatsApp</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
-  <footer class="site-foot">
-    <div class="section-inner max-w-6xl mx-auto text-center">
-      <p class="text-sm text-gray-600">📌 All prices are exclusive of GST. Each package/service applies to one brand/business. Additional brands billed separately.</p>
-      <p class="text-xs text-gray-500 mt-3">&copy; <span id="year"></span> SAWARIYA STUDIO — All rights reserved.</p>
-    </div>
-  </footer>
+  <footer class="site-foot">
+    <div class="section-inner max-w-6xl mx-auto text-center">
+      <p class="text-sm text-gray-600">📌 All prices are exclusive of GST. Each package/service applies to one brand/business. Additional brands billed separately.</p>
+      <p class="text-xs text-gray-500 mt-3">&copy; <span id="year"></span> SAWARIYA STUDIO — All rights reserved.</p>
+    </div>
+  </footer>
 
-  <!-- Logo Modal -->
-  <div id="logoModal" style="display: none; position: fixed; inset:0; background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center;">
-    <button id="closeLogo" style="position: absolute; top: 20px; right: 20px; font-size: 28px; color: white; background: none; border: none; cursor: pointer;">&times;</button>
-    <img src="" alt="Logo enlarged" id="logoModalImg" style="max-width: 90%; max-height: 90%; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.5);">
-  </div>
+    <div id="logoModal" style="display: none; position: fixed; inset:0; background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center;">
+    <button id="closeLogo" style="position: absolute; top: 20px; right: 20px; font-size: 28px; color: white; background: none; border: none; cursor: pointer;">&times;</button>
+    <img src="" alt="Logo enlarged" id="logoModalImg" style="max-width: 90%; max-height: 90%; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.5);">
+  </div>
 
-  <script>
-    // Preloader fadeout
-    window.addEventListener('load', () => {
-      const p = document.getElementById('preloader');
-      p.classList.add('fade-out');
-      setTimeout(() => p.remove(), 650);
-    });
+  <script>
+    // Preloader fadeout
+    window.addEventListener('load', () => {
+      const p = document.getElementById('preloader');
+      p.classList.add('fade-out');
+      setTimeout(() => p.remove(), 650);
+    });
 
-    // Mobile menu toggle
-    const hambtn = document.getElementById('hambtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMobile = document.getElementById('closeMobile');
+    // Mobile menu toggle
+    const hambtn = document.getElementById('hambtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMobile = document.getElementById('closeMobile');
 
-    hambtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-    closeMobile.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    hambtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeMobile.addEventListener('click', () => mobileMenu.classList.remove('open'));
 
-    // Simple testimonial slider
-    (function(){
-      const slider = document.getElementById('testSlider');
-      const cards = slider.querySelectorAll('.test-card');
-      let idx = 0;
+    // Simple testimonial slider
+    (function(){
+      const slider = document.getElementById('testSlider');
+      const cards = slider.querySelectorAll('.test-card');
+      let idx = 0;
 
-      function show(i){
-        cards.forEach((c,ci) => {
-          c.style.transform = `translateX(${(ci - i) * 110}%)`;
-          c.style.opacity = ci === i ? '1' : '0.28';
-          c.style.transition = 'all .5s cubic-bezier(.2,.9,.2,1)';
-        });
-      }
-      show(idx);
+      function show(i){
+        cards.forEach((c,ci) => {
+          c.style.transform = `translateX(${(ci - i) * 110}%)`;
+          c.style.opacity = ci === i ? '1' : '0.28';
+          c.style.transition = 'all .5s cubic-bezier(.2,.9,.2,1)';
+        });
+      }
+      show(idx);
 
-      document.getElementById('nextTest').addEventListener('click', () => {
-        idx = (idx + 1) % cards.length;
-        show(idx);
-      });
-      document.getElementById('prevTest').addEventListener('click', () => {
-        idx = (idx - 1 + cards.length) % cards.length;
-        show(idx);
-      });
+      document.getElementById('nextTest').addEventListener('click', () => {
+        idx = (idx + 1) % cards.length;
+        show(idx);
+      });
+      document.getElementById('prevTest').addEventListener('click', () => {
+        idx = (idx - 1 + cards.length) % cards.length;
+        show(idx);
+      });
 
-      // auto rotate
-      setInterval(() => { idx = (idx + 1) % cards.length; show(idx); }, 6000);
-    })();
+      // auto rotate
+      setInterval(() => { idx = (idx + 1) % cards.length; show(idx); }, 6000);
+    })();
 
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Logo Zoom Feature
-    const zoomLogos = document.querySelectorAll('.zoom-logo');
-    const logoModal = document.getElementById('logoModal');
-    const logoModalImg = document.getElementById('logoModalImg');
-    const closeLogo = document.getElementById('closeLogo');
+    // Logo Zoom Feature
+    const zoomLogos = document.querySelectorAll('.zoom-logo');
+    const logoModal = document.getElementById('logoModal');
+    const logoModalImg = document.getElementById('logoModalImg');
+    const closeLogo = document.getElementById('closeLogo');
 
-    zoomLogos.forEach(logo => {
-      logo.style.cursor = "pointer";
-      logo.addEventListener('click', () => {
-        logoModal.style.display = "flex";
-        logoModalImg.src = logo.src;
-      });
-    });
+    zoomLogos.forEach(logo => {
+      logo.style.cursor = "pointer";
+      logo.addEventListener('click', () => {
+        logoModal.style.display = "flex";
+        logoModalImg.src = logo.src;
+      });
+    });
 
-    closeLogo.addEventListener('click', () => logoModal.style.display = "none");
-    logoModal.addEventListener('click', e => {
-      if (e.target === logoModal) {
-        logoModal.style.display = "none";
-      }
-    });
-  </script>
+    closeLogo.addEventListener('click', () => logoModal.style.display = "none");
+    logoModal.addEventListener('click', e => {
+      if (e.target === logoModal) {
+        logoModal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 
 </html>
-
-
